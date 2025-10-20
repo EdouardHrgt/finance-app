@@ -20,7 +20,6 @@ backend/
 ├── routes/ # API routes
 ├── utils/ # Utility classes (e.g., HttpError)
 ├── .env # Environment variables
-└── package.json # Dependencies and scripts
 
 ---
 
@@ -41,7 +40,7 @@ cd backend
 
 Install dependencies:
 
-npm install
+```npm install```
 
 Create a .env file in the root:
 
@@ -52,15 +51,4 @@ Nodemon will automatically restart the server on code changes.
 
 Start the server in production:
 
-npm start
-
-
-Security & Best Practices
-
-Helmet secures HTTP headers.
-
-CORS handles cross-origin requests.
-
-JWT secures protected endpoints.
-
-Sensitive information should remain in the .env file.
+```npm start```
