@@ -10,16 +10,11 @@ This project is a **Node.js backend server** using **Express**, featuring:
 
 ---
 
-## 📂 Project Structure
-
-backend/
-│
-├── app.js # Express configuration and middlewares
-├── server.js # HTTP server creation
-├── middlewares/ # Custom middlewares (e.g., authentication)
-├── routes/ # API routes
-├── utils/ # Utility classes (e.g., HttpError)
-├── .env # Environment variables
+## 📂 Project Available Routes
+http://localhost:3000/api/pots
+http://localhost:3000/api/budgets
+http://localhost:3000/api/transaction
+http://localhost:3000/api/balance
 
 ---
 
