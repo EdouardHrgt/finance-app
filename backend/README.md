@@ -11,10 +11,20 @@ This project is a **Node.js backend server** using **Express**, featuring:
 ---
 
 ## 📂 Project Available Routes
-http://localhost:3000/api/pots
-http://localhost:3000/api/budgets
-http://localhost:3000/api/transaction
-http://localhost:3000/api/balance
+#GET:
+URL.../api/pots
+URL.../api/budgets
+URL.../api/transaction
+URL.../api/balance
+URL.../api/users
+
+#POST:
+URL.../api/users
+Expected body (JSON): 
+{
+  "email": "newuser@gmail.com",
+  "name": "Alice"
+}
 
 ---
 
@@ -39,11 +49,18 @@ Install dependencies:
 
 Create a .env file in the root:
 
+DOTENV_CONFIG_DEBUG=false
 PORT=3000
-JWT_SECRET=yourJWTSecret
+BASE_URL= backend-URL
+FRONTEND_URL= frontend-url
+JWT_SECRET= MyToken
+
 
 Nodemon will automatically restart the server on code changes.
 
 Start the server in production:
 
 ```npm start```
+
+
+

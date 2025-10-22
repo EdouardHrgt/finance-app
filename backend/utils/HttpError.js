@@ -1,4 +1,3 @@
-// ./utils/HttpError.js
 class HttpError extends Error {
   constructor(message, status, routes = null) {
     super(message);
