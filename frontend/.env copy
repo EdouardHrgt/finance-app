@@ -1,0 +1,4 @@
+#replace the url by the base URL of your project
+# All fetch are done by using this variable.
+VITE_API_URL=http://myUrl
+

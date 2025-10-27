@@ -1,4 +1,103 @@
 /* === HEADER - NAVBAR ===*/
 header {
-  background-color: lightcyan;
+  background-color: var(--grey-900);
+  padding: 40px 0 24px 0;
+  border-radius: 0 24px 24px 0;
+  max-width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+header a,
+header p {
+  color: var(--grey-300);
+}
+
+header a,
+#toggle-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 56px;
+  margin: 4px 0;
+  max-width: 276px;
+  border-radius: 0 12px 12px 0;
+  padding-left: 2rem;
+  transition: background-color 0.3s, padding 0.3s;
+  cursor: pointer;
+}
+
+header a:hover,
+#toggle-menu:hover {
+  border-left: 5px solid var(--green);
+  background-color: var(--white);
+  opacity: 1;
+}
+
+header .logo-large {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+header .logo-minimized {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+header #toggle-menu {
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-large {
+  max-width: 122px;
+}
+
+/* === MINIMIZED STATE === */
+header.minimized {
+  max-width: 90px;
+}
+
+header.minimized .logo-large {
+  display: none;
+}
+
+header.minimized .logo-minimized {
+  display: block;
+  width: 13px;
+}
+
+header.minimized a {
+  justify-content: center;
+  padding-left: 0;
+}
+
+header.minimized a span {
+  display: inline-block;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+header.minimized #toggle-menu {
+  justify-content: center;   
+  padding-left: 0;           
+  max-width: 100%;           
+  gap: 0; 
+}
+
+header.minimized #toggle-menu p {
+  display: none;
+}
+
+header.minimized #toggle-menu img {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }

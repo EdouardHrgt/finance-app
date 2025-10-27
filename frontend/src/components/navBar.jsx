@@ -1,18 +1,50 @@
+import { useState } from "react";
+
 function NavBar() {
+  const [isMinimized, setIsMinimized] = useState(false);
+
+  const toggleMenu = () => setIsMinimized(!isMinimized);
+
   return (
-    <div>
-      <header className="header-main">
-        <nav>
-          <ul>
-            <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">
-                home
+    <header className={`header-main ${isMinimized ? "minimized" : ""}`}>
+      {/* Logos */}
+      <img
+        src="./assets/logo-large.svg"
+        alt="logo large"
+        className="logo-large"
+      />
+      <img
+        src="./assets/logo-small.svg"
+        alt="logo minimized"
+        className="logo-minimized"
+      />
+
+      {/* Navigation */}
+      <nav>
+        <ul>
+          {[
+            ["overview", "Overview"],
+            ["transactions", "Transactions"],
+            ["budgets", "Budgets"],
+            ["pots", "Pots"],
+            ["recurring-bills", "Recurring bills"],
+          ].map(([icon, label]) => (
+            <li key={icon}>
+              <a href="#" className="tp3">
+                <img src={`./assets/icon-nav-${icon}.svg`} alt={label} />
+                <span>{label}</span>
               </a>
             </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Toggle menu */}
+      <div id="toggle-menu" onClick={toggleMenu}>
+        <img src="./assets/icon-minimize-menu.svg" alt="toggle menu" />
+        {!isMinimized && <p className="tp3">Minimize Menu</p>}
+      </div>
+    </header>
   );
 }
 

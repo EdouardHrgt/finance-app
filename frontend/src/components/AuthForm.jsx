@@ -1,5 +1,6 @@
 import fetchDatas from "../utils/fetchDatas";
-const users = await fetchDatas("http://localhost:3000/api/users");
+const apiUrl = import.meta.env.VITE_API_URL;
+const users = await fetchDatas(`${apiUrl}/api/users`);
 console.log(users);
 
 function AuthForm() {
