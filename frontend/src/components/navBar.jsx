@@ -9,11 +9,13 @@ function NavBar() {
     <header className={`header-main ${isMinimized ? "minimized" : ""}`}>
       {/* Logos */}
       <img
+        id="logo-1"
         src="./assets/logo-large.svg"
         alt="logo large"
         className="logo-large"
       />
       <img
+        id="logo-2"
         src="./assets/logo-small.svg"
         alt="logo minimized"
         className="logo-minimized"
