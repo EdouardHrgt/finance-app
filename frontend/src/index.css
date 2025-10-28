@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("./styles/navbar.module.css");
 @import url("./styles/overview.module.css");
+@import url("./styles/pots.module.css");
 :root {
   /* Neutral*/
   --white: #ffffff;
@@ -139,8 +140,7 @@ button {
 /* ===== LOADER + ANIMATION + Error message ===== */
 .spinner {
   display: inline-block;
-  margin-top: 5px;
-  width: 20px;
+  width: 18px;
   aspect-ratio: 1/1;
   border: 2px solid var(--grey-400);
   border-top: 2px solid var(--green);

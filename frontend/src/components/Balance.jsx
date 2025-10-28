@@ -1,34 +1,7 @@
-import { useState, useEffect } from "react";
-import fetchDatas from "../utils/fetchDatas";
+import useFetch from "../hooks/useFetch";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
-function Balance() {
-  const [balance, setBalance] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const getBalance = async () => {
-      try {
-        setLoading(true);
-        const data = await fetchDatas(`${apiUrl}/api/balance`);
-
-        if (!data) {
-          throw new Error("No data received from API");
-        }
-
-        setBalance(data);
-      } catch (err) {
-        console.error("Error fetching balance:", err);
-        setError(err.message || "Unknown error");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getBalance();
-  }, []);
+function Overview() {
+  const { data: balance, loading, error } = useFetch("/api/balance");
 
   const metrics = [
     { label: "Current Balance", value: balance?.current },
@@ -39,7 +12,6 @@ function Balance() {
   return (
     <div className="overview-wrapper">
       <h1 className="tp1">Overview</h1>
-
       <section className="metrics">
         {metrics.map(({ label, value }) => (
           <div className="metric" key={label}>
@@ -48,9 +20,11 @@ function Balance() {
               {loading ? (
                 <span className="spinner"></span>
               ) : error ? (
-                <span className="error">An error occurred</span>
-              ) : (
+                <span className="error">{error}</span>
+              ) : value != null ? (
                 <strong className="tp1">${value.toLocaleString()}</strong>
+              ) : (
+                <span className="error">Data missing</span>
               )}
             </p>
           </div>
@@ -60,4 +34,4 @@ function Balance() {
   );
 }
 
-export default Balance;
+export default Overview;

@@ -9,6 +9,8 @@ POST : const newUser = await fetchDatas("http://localhost:3000/api/users", "POST
 });
 */
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const fetchDatas = async (url, method = "GET", data = null) => {
   try {
     // Build fetch options
@@ -25,7 +27,7 @@ const fetchDatas = async (url, method = "GET", data = null) => {
     }
 
     // Perform the fetch
-    const response = await fetch(url, options);
+    const response = await fetch(`${apiUrl}${url}`, options);
 
     // Check if the response is not ok (status 400 - 500)
     if (!response.ok) {

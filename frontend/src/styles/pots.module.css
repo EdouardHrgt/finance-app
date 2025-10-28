@@ -1,0 +1,78 @@
+.pots-wrapper {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 608px;
+}
+
+.pots-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pots-title-wrapper a {
+  color: var(--grey-500);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pots-metrics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 16px;
+}
+
+.total-saved {
+  display: flex;
+  align-items: center;
+  background-color: var(--beige-100);
+  border-radius: 12px;
+  width: 247px;
+  height: 110px;
+  padding-left: 1.5rem;
+  gap: 1.5rem;
+}
+
+.total-saved-txt p,
+.pots-metric h3 {
+  margin-bottom: 7px;
+  color: var(--grey-500);
+}
+
+.total-saved-txt strong,
+.pots-metric strong {
+  color: var(--grey-900);
+}
+
+/* ===== Metrix grid 2cols 2 rows with colors bars ===== */
+.pots-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 1rem;
+  width: 277px;
+}
+
+.pots-metric {
+    max-width: 130.5px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pots-metric-bar {
+    border-radius: 8px;
+    height: 100%;
+    width: 4px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 800px) {
+}
