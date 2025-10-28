@@ -4,6 +4,13 @@ function NavBar() {
   const [isMinimized, setIsMinimized] = useState(false);
 
   const toggleMenu = () => setIsMinimized(!isMinimized);
+  const navBarPages = [
+    ["overview", "Overview"],
+    ["transactions", "Transactions"],
+    ["budgets", "Budgets"],
+    ["pots", "Pots"],
+    ["recurring-bills", "Recurring bills"],
+  ];
 
   return (
     <header className={`header-main ${isMinimized ? "minimized" : ""}`}>
@@ -24,13 +31,7 @@ function NavBar() {
       {/* Navigation */}
       <nav>
         <ul>
-          {[
-            ["overview", "Overview"],
-            ["transactions", "Transactions"],
-            ["budgets", "Budgets"],
-            ["pots", "Pots"],
-            ["recurring-bills", "Recurring bills"],
-          ].map(([icon, label]) => (
+          {navBarPages.map(([icon, label]) => (
             <li key={icon}>
               <a href="#" className="tp3">
                 <img src={`./assets/icon-nav-${icon}.svg`} alt={label} />

@@ -64,6 +64,9 @@ const createGetRoute = (pathUrl, fetchFunction, itemName) => {
         }));
       }
 
+      //  Simulate 3-second delay for testing front app loading states...
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       res.status(200).json(data);
     } catch (err) {
       next(err);

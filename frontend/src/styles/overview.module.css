@@ -1,0 +1,49 @@
+.overview-wrapper {
+  padding: 31px 3rem 0 0;
+  max-width: 1140px;
+}
+
+.overview-wrapper .metrics {
+  max-width: var(--mx-width);
+}
+
+.overview-wrapper h1 {
+  color: var(--grey-900);
+}
+
+.overview-wrapper .metrics {
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overview-wrapper .metric {
+  max-width: 337px;
+  width: 100%;
+  border-radius: 12px;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+  background-color: var(--white);
+  height: 119px;
+}
+
+.overview-wrapper .metric h3 {
+  color: var(--grey-500);
+}
+
+.overview-wrapper .metrics > :first-child {
+  background-color: var(--grey-900);
+  color: var(--white);
+}
+
+.overview-wrapper .metrics > :first-child h3 {
+  color: var(--grey-300);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 800px) {
+}

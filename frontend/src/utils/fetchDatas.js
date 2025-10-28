@@ -35,7 +35,7 @@ const fetchDatas = async (url, method = "GET", data = null) => {
 
     // Parse and return JSON
     const res = await response.json();
-    console.info("Fetch success:", res);
+    // console.info("Fetch success:", res);
     return res;
   } catch (error) {
     console.error("Fetch error:", error.message);
