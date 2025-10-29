@@ -5,24 +5,11 @@
   max-width: 608px;
 }
 
-.pots-title-wrapper {
+.pots-metrics {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.pots-title-wrapper a {
-  color: var(--grey-500);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.pots-metrics {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0 16px;
+  margin: 20px 0 16px;
 }
 
 .total-saved {
@@ -57,17 +44,17 @@
 }
 
 .pots-metric {
-    max-width: 130.5px;
-    height: 43px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  max-width: 130.5px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .pots-metric-bar {
-    border-radius: 8px;
-    height: 100%;
-    width: 4px;
+  border-radius: 8px;
+  height: 100%;
+  width: 4px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -75,4 +62,13 @@
 }
 
 @media (max-width: 800px) {
+  .total-saved {
+    width: 100%;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+  }
+  .pots-metrics {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }

@@ -3,10 +3,8 @@ import useFetch from "../hooks/useFetch";
 function Pots() {
   const { data: pots, loading, error } = useFetch("/api/pots");
 
-  // Calcul du total saved
   const totalSaved = pots?.reduce((sum, pot) => sum + (pot.total || 0), 0);
 
-  // On prend les 4 premiers pots pour les metrics
   const metrics = pots
     ? pots.slice(0, 4).map((pot) => ({
         label: pot.name,
@@ -16,8 +14,8 @@ function Pots() {
     : Array(4).fill({ label: "", value: 0, theme: "#ccc" });
 
   return (
-    <div className="pots-wrapper">
-      <section className="pots-title-wrapper">
+    <div className="transactions-and-pots-container">
+      <section className="title-link-wrapper ">
         <h2 className="tp2">Pots</h2>
         <a href="">
           See Details
@@ -53,6 +51,7 @@ function Pots() {
           <div className="total-saved-txt">
             <p className="tp4-regular">Total Saved</p>
             <p>
+              {/* if fetch isnt finished => Spinner is displayed... else if fetch got an error => error message is displayed.. else we inject datas */}
               {loading ? (
                 <span className="spinner"></span>
               ) : error ? (
@@ -72,15 +71,18 @@ function Pots() {
                 style={{ backgroundColor: m.theme }}
               ></div>
               <div className="pots-metric-txt">
-                <h3 className="tp5-regular">{m.label || "Loading..."}</h3>
+                <h3 className="tp5-regular">
+                  {loading ? "Loading..." : error ? "Error" : m.label}
+                </h3>
                 <p>
+                  {/* if fetch isnt finished => Spinner is displayed... else if fetch got an error => error message is displayed.. else we inject datas */}
                   {loading ? (
                     <span className="spinner"></span>
                   ) : error ? (
                     <span className="error">{error}</span>
                   ) : (
-                    <strong className="tp4-bold">$
-                      {m.value.toLocaleString()}
+                    <strong className="tp4-bold">
+                      ${m.value.toLocaleString()}
                     </strong>
                   )}
                 </p>

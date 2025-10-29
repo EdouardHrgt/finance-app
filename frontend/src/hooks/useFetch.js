@@ -12,7 +12,7 @@ const useFetch = (url) => {
       const result = await fetchDatas(url);
 
       if (!result) {
-        setError("Failed to fetch data");
+        setError("N/A");
       } else {
         setData(result);
       }

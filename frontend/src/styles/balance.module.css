@@ -42,8 +42,49 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1430px) {
+  .overview-wrapper .metric {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .overview-wrapper .metric {
+    max-width: 215px;
+  }
+}
+
 @media (max-width: 1024px) {
+  .overview-wrapper {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .overview-wrapper h1 {
+    margin: auto;
+    max-width: 687px;
+  }
+  .overview-wrapper .metrics {
+    max-width: 687px;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-inline: auto;
+  }
+  .overview-wrapper .metric {
+    max-width: 213px;
+  }
 }
 
 @media (max-width: 800px) {
+  .overview-wrapper h1 {
+    margin: auto;
+    max-width: 100%;
+  }
+  .overview-wrapper .metrics {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .overview-wrapper .metric {
+    max-width: 100%;
+  }
 }

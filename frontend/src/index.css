@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("./styles/navbar.module.css");
-@import url("./styles/overview.module.css");
+@import url("./styles/balance.module.css");
 @import url("./styles/pots.module.css");
+@import url("./styles/transactions.module.css");
 :root {
   /* Neutral*/
   --white: #ffffff;
@@ -43,6 +44,7 @@
   --sp-50: 4px;
   /* WIDTH */
   --mx-width: 1060px;
+  --portrait: 40px
 }
 
 * {
@@ -162,7 +164,34 @@ button {
   font-weight: 700;
 }
 
+/* ===== Label + "See details" link bar in components ===== */
+.title-link-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-link-wrapper a {
+  color: var(--grey-500);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transactions-and-pots-container {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 608px;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1300px) {
+  #app-main {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
     --mx-width: 688px;
@@ -171,7 +200,22 @@ button {
     display: flex;
     flex-direction: column;
   }
+  .overview-page {
+    min-height: calc(100vh - 81px);
+    padding-bottom: 80px;
+  }
+  .transactions-and-pots-container {
+    margin-inline: 0 auto;
+    max-width: 687px;
+  }
 }
 
 @media (max-width: 800px) {
+  :root {
+    --portrait: 32px
+  }
+  .transactions-and-pots-container {
+    max-width: 100%;
+    margin-inline: 1rem;
+  }
 }

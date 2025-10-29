@@ -17,6 +17,7 @@ function Overview() {
           <div className="metric" key={label}>
             <h3 className="tp4-regular">{label}</h3>
             <p>
+              {/* if fetch isnt finished => Spinner is displayed... else if fetch got an error => error message is displayed.. else we inject datas */}
               {loading ? (
                 <span className="spinner"></span>
               ) : error ? (
