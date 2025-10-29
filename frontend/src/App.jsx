@@ -1,5 +1,5 @@
-import NavBar from './components/navBar.jsx'
-import Overview from './pages-components/Overview.jsx'
+import NavBar from "./components/navBar.jsx";
+import Overview from "./pages-components/Overview.jsx";
 // import AuthForm from './components/AuthForm.jsx'
 
 function App() {

@@ -1,10 +1,6 @@
 .overview-wrapper {
-  padding: 31px 3rem 0 0;
+  padding: 31px 0;
   max-width: 1140px;
-}
-
-.overview-wrapper .metrics {
-  max-width: var(--mx-width);
 }
 
 .overview-wrapper h1 {

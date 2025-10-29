@@ -4,7 +4,6 @@ const DEFAULT_AVATAR = "/assets/avatars/no-pp.png";
 
 function Transactions() {
   const { data: transactions, loading, error } = useFetch("/api/transactions");
-  console.log(transactions);
   const transactionsList =
     transactions?.slice(0, 5).map((trans) => ({
       label: trans.name,
@@ -29,10 +28,10 @@ function Transactions() {
     });
   };
 
-  const formatAmount = (raw) => {
-    if (raw == null) return "N/A";
+  const formatAmount = (value) => {
+    if (value == null) return "N/A";
 
-    const str = String(raw).trim();
+    const str = String(value).trim();
     const isNegative = str.startsWith("-");
     const num = Math.abs(Number.parseFloat(str));
     if (!Number.isFinite(num)) return "N/A";

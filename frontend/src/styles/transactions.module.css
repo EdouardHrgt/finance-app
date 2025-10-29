@@ -2,8 +2,12 @@
     margin: 24px 0;
 }
 
-.transcations-list > :first-child {
+.transactions-list > :first-child {
   border-top: none;
+}
+
+.transactions-list {
+  margin-top: 32px;
 }
 
 .transaction {
@@ -35,4 +39,10 @@
 
 .transaction-amount-date .date {
   color: var(--grey-500);
+}
+
+@media (max-width: 800px) {
+.transactions-list {
+  margin-top: 12px;
+}  
 }

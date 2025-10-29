@@ -118,7 +118,7 @@ app.get("/api/users", (req, res) => {
 });
 
 // ================================
-// SERVE STATIC IMAGES
+// SERVE STATIC IMAGES ONLY TO FRONT APP
 // ================================
 app.use(
   "/images",

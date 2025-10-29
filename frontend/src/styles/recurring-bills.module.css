@@ -1,0 +1,33 @@
+.bill {
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 1rem;
+  background-color: var(--beige-100);
+  height: 61px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bill p {
+  color: var(--grey-500);
+}
+
+.bill strong {
+  color: var(--grey-900);
+}
+
+.bills > :last-child {
+  margin-bottom: 0;
+}
+
+.bills {
+  margin-top: 32px;
+}
+
+@media (max-width: 800px) {
+  .bills {
+    margin-top: 12px;
+  }
+}
