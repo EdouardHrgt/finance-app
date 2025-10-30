@@ -59,6 +59,10 @@
   font-family: "Public Sans", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -71,11 +75,6 @@ li {
 
 a {
   text-decoration: none;
-  transition: 0.4s ease-in-out;
-}
-
-a:hover {
-  opacity: 0.8;
 }
 
 button {
@@ -139,10 +138,11 @@ button {
 #app-main {
   background-color: var(--beige-100);
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: auto auto;
   grid-template-rows: 1fr;
   gap: 40px;
   padding-right: 40px;
+  position: relative;
 }
 
 /* ===== LOADER + ANIMATION + Error message ===== */
@@ -167,7 +167,7 @@ button {
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* ===== Label + "See details" link bar in components ===== */
@@ -182,21 +182,33 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: 0.3s;
+}
+
+.title-link-wrapper a:hover {
+  box-shadow: 0 1px 0 0 var(--grey-500);
 }
 
 /* ===== REGROUPED COMPONENTS CONTAINERS ===== */
 .transactions-and-pots-container,
-.budget-bills-container {
+.budget-bills-container,
+.budgets-wrapper {
   background-color: var(--white);
   border-radius: 12px;
   padding: 1.5rem;
 }
+
 .transactions-and-pots-container {
   max-width: 608px;
 }
 
-.budget-bills-container {
-  max-width: 428px;
+.budget-bills-container,
+.budgets-wrapper {
+  width: 100%;
+}
+
+.budgets-wrapper {
+  margin-bottom: 24px;
 }
 
 /* ===== MAIN PAGES LAYOUTS ===== */
@@ -208,14 +220,29 @@ button {
   max-width: 1140px;
 }
 
-.overview-page-grid > * {
-  border: 1px solid red;
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1455px) {
+  .transactions-and-pots-container {
+    max-width: 500px;
+  }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1300px) {
   #app-main {
     gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  .overview-page-grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+  .transactions-and-pots-container,
+  .budget-bills-container,
+  .budgets-wrapper {
+    max-width: 100%;
   }
 }
 
@@ -226,14 +253,18 @@ button {
   #app-main {
     display: flex;
     flex-direction: column;
+    padding-right: 0;
   }
   .overview-page {
     min-height: calc(100vh - 81px);
     padding-bottom: 80px;
   }
   .transactions-and-pots-container {
-    margin-inline: 0 auto;
-    max-width: 687px;
+    margin-inline: auto;
+  }
+  .overview-page-grid {
+    max-width: 800px;
+    margin-inline: auto;
   }
 }
 
@@ -241,8 +272,8 @@ button {
   :root {
     --portrait: 32px;
   }
-  .transactions-and-pots-container {
-    max-width: 100%;
-    margin-inline: 1rem;
+  body {
+    padding: 0 10px;
+    background-color: var(--beige-100);
   }
 }

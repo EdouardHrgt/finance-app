@@ -8,7 +8,7 @@
 }
 
 .overview-wrapper .metrics {
-  margin: 32px 0;
+  margin: 24px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +30,7 @@
 
 .overview-wrapper .metrics > :first-child {
   background-color: var(--grey-900);
-  color: var(--white);
+  color: var(--white)!important;
 }
 
 .overview-wrapper .metrics > :first-child h3 {
@@ -53,20 +53,21 @@
 @media (max-width: 1024px) {
   .overview-wrapper {
     max-width: 100%;
-    padding: 1rem;
+    padding: 0;
   }
   .overview-wrapper h1 {
     margin: auto;
-    max-width: 687px;
+    max-width: 800px;
   }
   .overview-wrapper .metrics {
-    max-width: 687px;
+    max-width: inherit;
     justify-content: center;
     gap: 1.5rem;
     margin-inline: auto;
+    max-width: 800px;
   }
   .overview-wrapper .metric {
-    max-width: 213px;
+    max-width: 250px;
   }
 }
 

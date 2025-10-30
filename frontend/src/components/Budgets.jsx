@@ -16,13 +16,17 @@ function Budgets() {
   const loading = loadingBudgets || loadingTransactions;
   const error = errorBudgets || errorTransactions;
 
-  // ============ Helpers ============
+  // ======================
+  // Helper: format currency
+  // ======================
   const formatAmount = (value) => {
     if (value == null || isNaN(value)) return "N/A";
     return `$${Math.abs(value).toFixed(2)}`;
   };
 
-  // ============ Données ============
+  // ======================
+  // Compute budgetsDetail
+  // ======================
   const budgetsDetail =
     budgets?.map((b) => ({
       label: b.category,
@@ -30,11 +34,15 @@ function Budgets() {
       theme: b.theme,
     })) || [];
 
+  // ======================
+  // Compute totals
+  // ======================
   let totalBudget = 0;
   let totalSpent = 0;
 
   if (budgets && transactions) {
     totalBudget = budgets.reduce((acc, b) => acc + b.maximum, 0);
+
     const budgetCategories = budgets.map((b) => b.category);
     totalSpent = transactions
       .filter(
@@ -44,11 +52,11 @@ function Budgets() {
       .reduce((acc, t) => acc + Math.abs(t.amount), 0);
   }
 
-  const totals = { totalBudget, totalSpent };
-
-  // ============ Génération du gradient ============
-  let gradient = "transparent";
-  if (budgetsDetail.length > 0 && totalBudget > 0) {
+  // ======================
+  // Compute donut gradient
+  // ======================
+  let gradient = "var(--grey-100)";
+  if (!loading && !error && budgetsDetail.length > 0 && totalBudget > 0) {
     let start = 0;
     const segments = budgetsDetail.map((b) => {
       const percent = (b.value / totalBudget) * 100;
@@ -58,9 +66,18 @@ function Budgets() {
       return seg;
     });
     gradient = `conic-gradient(${segments.join(", ")})`;
+  } else if (loading) {
+    gradient = `conic-gradient(
+      var(--grey-300) 0% 25%,
+      var(--grey-100) 25% 50%,
+      var(--grey-300) 50% 75%,
+      var(--grey-100) 75% 100%
+    )`;
   }
 
-  // ============ Rendu ============
+  // ======================
+  // Render
+  // ======================
   return (
     <div className="budgets-wrapper">
       <section className="title-link-wrapper">
@@ -83,36 +100,64 @@ function Budgets() {
       </section>
 
       <section className="donut-details">
-        {/* --- Donut --- */}
+        {/* === Donut Graph === */}
         <div className="donut" style={{ background: gradient }}>
           <div className="donut-hole">
-            <p>
-              <strong>
-                {loading
-                  ? "..."
-                  : error
-                  ? "N/A"
-                  : `$${totals.totalSpent.toFixed(0)}`}
-              </strong>
-            </p>
-            <p>of ${totals.totalBudget.toFixed(0)} limit</p>
+            {loading ? (
+              <div className="spinner" />
+            ) : (
+              <div className="donut-center-txt">
+                <p>
+                  <strong
+                    style={{ color: error ? "var(--red)" : "var(--grey-900)" }}
+                    className="tp1"
+                  >
+                    {error ? "N/A" : `$${totalSpent.toFixed(0)}`}
+                  </strong>
+                </p>
+                <p className="donut-limit">
+                  of ${totalBudget.toFixed(0)} limit
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* --- Details --- */}
+        {/* === Details === */}
         <div className="details">
-          {budgetsDetail.map((b) => (
-            <div key={b.label} className="detail">
-              <div
-                className="color-bar"
-                style={{
-                  backgroundColor: b.theme,
-                }}
-              />
-              <p className="tp4-regular">{b.label}</p>
-              <p className="tp4-bold">{formatAmount(b.value)}</p>
-            </div>
-          ))}
+          {budgetsDetail.length > 0 ? (
+            budgetsDetail.map((b, i) => (
+              <div key={i} className="detail">
+                <div
+                  className="color-bar"
+                  style={{
+                    backgroundColor: b.theme,
+                  }}
+                />
+                <div className="detail-txt">
+                  <p className="tp5-regular">{b.label}</p>
+                  <p>
+                    <strong
+                      className="tp4-bold"
+                      style={{
+                        color: error ? "var(--red)" : "var(--grey-900)",
+                      }}
+                    >
+                      {loading ? (
+                        <span className="spinner small" />
+                      ) : error ? (
+                        "N/A"
+                      ) : (
+                        formatAmount(b.value)
+                      )}
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="error">No budgets available</p>
+          )}
         </div>
       </section>
     </div>
@@ -120,4 +165,3 @@ function Budgets() {
 }
 
 export default Budgets;
-

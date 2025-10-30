@@ -4,7 +4,6 @@ header {
   padding: 40px 0 24px 0;
   border-radius: 0 24px 24px 0;
   max-width: 300px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
@@ -50,7 +49,7 @@ header .logo-minimized {
 }
 
 header #toggle-menu {
-  margin-top: auto;
+  margin-top: 250px;
   transition: all 0.3s ease;
 }
 
@@ -107,7 +106,6 @@ header.minimized #toggle-menu img {
     padding: 10px 1rem;
     border-radius: 12px 12px 0 0;
     max-width: 100%;
-    height: auto;
     flex-direction: row;
     align-items: center;
     position: fixed;

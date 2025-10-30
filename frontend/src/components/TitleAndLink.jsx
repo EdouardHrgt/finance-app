@@ -2,7 +2,7 @@ function TitleAndLink(title, link) {
   return (
     <section className="title-link-wrapper">
       <h2 className="tp2">${title}</h2>
-      <a href="${link}">
+      <a href="``${link}`">
         See Details
         <svg
           fill="none"
