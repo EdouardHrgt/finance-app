@@ -266,6 +266,9 @@ button {
     max-width: 800px;
     margin-inline: auto;
   }
+  .bills-container {
+    margin-bottom: 12px;
+  }
 }
 
 @media (max-width: 800px) {

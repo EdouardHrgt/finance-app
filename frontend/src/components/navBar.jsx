@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function NavBar() {
   const [isMinimized, setIsMinimized] = useState(false);
 
-  const toggleMenu = () => setIsMinimized(!isMinimized);
+  const toggleMenu = () => setIsMinimized((prev) => !prev);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        setIsMinimized(false);
+      }
+    };
+
+    handleResize(); // vérifie dès le montage
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const navBarPages = [
     ["overview", "Overview"],
     ["transactions", "Transactions"],
@@ -14,7 +28,6 @@ function NavBar() {
 
   return (
     <header className={`header-main ${isMinimized ? "minimized" : ""}`}>
-      {/* Logos */}
       <img
         id="logo-1"
         src="./assets/logo-large.svg"
@@ -28,7 +41,6 @@ function NavBar() {
         className="logo-minimized"
       />
 
-      {/* Navigation */}
       <nav>
         <ul>
           {navBarPages.map(([icon, label]) => (
@@ -42,7 +54,6 @@ function NavBar() {
         </ul>
       </nav>
 
-      {/* Toggle menu */}
       <div id="toggle-menu" onClick={toggleMenu}>
         <img src="./assets/icon-minimize-menu.svg" alt="toggle menu" />
         {!isMinimized && <p className="tp3">Minimize Menu</p>}
