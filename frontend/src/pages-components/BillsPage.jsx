@@ -1,9 +1,9 @@
 
 function BillsPage() {
   return (
-    <div className="transactions-page page">
+    <main className="bills-page page">
       <h1 className="tp1">Bills</h1>
-    </div>
+    </main>
   );
 }
 

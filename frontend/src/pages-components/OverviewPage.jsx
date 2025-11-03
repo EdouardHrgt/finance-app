@@ -6,7 +6,7 @@ import RecurringBills from "../components/Overview-page-components/RecurringBill
 
 function Overview() {
   return (
-    <div className="overview-page page">
+    <main className="overview-page page">
       <Balance />
       <div className="overview-page-grid">
         <section className="overview-page-left-col">
@@ -18,7 +18,7 @@ function Overview() {
           <RecurringBills />
         </section>
       </div>
-    </div>
+    </main>
   );
 }
 
