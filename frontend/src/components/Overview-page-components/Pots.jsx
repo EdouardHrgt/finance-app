@@ -1,5 +1,5 @@
-import useFetch from "../hooks/useFetch";
-import TitleAndLink from "./TitleAndLink";
+import useFetch from "../../hooks/useFetch";
+import TitleAndLink from "../../components/TitleAndLink";
 
 function Pots() {
   const { data: pots, loading, error } = useFetch("/api/pots");

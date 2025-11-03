@@ -1,5 +1,5 @@
-import useFetch from "../hooks/useFetch";
-import TitleAndLink from "./TitleAndLink";
+import useFetch from "../../hooks/useFetch";
+import TitleAndLink from "../../components/TitleAndLink";
 
 const DEFAULT_AVATAR = "/assets/avatars/no-pp.png";
 

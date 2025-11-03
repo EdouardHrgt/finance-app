@@ -9,12 +9,12 @@ header {
   transition: all 0.4s ease;
 }
 
-header a,
+header .nav-link,
 header p {
   color: var(--grey-300);
 }
 
-header a,
+.nav-link,
 #toggle-menu {
   display: flex;
   align-items: center;
@@ -22,16 +22,27 @@ header a,
   height: 56px;
   margin: 4px 0;
   max-width: 276px;
+  width: 100%;
   border-radius: 0 12px 12px 0;
   padding-left: 2rem;
   transition: background-color 0.3s, padding 0.3s;
   cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  font: inherit;
 }
 
-header a:hover {
+.nav-link:hover {
   border-left: 5px solid var(--green);
   background-color: var(--white);
-  opacity: 1;
+  color: var(--grey-900);
+}
+
+.nav-link.active {
+  border-left: 5px solid var(--green);
+  background-color: var(--white);
+  color: var(--grey-900);
 }
 
 header .logo-large {
@@ -71,12 +82,12 @@ header.minimized .logo-minimized {
   width: 13px;
 }
 
-header.minimized a {
+header.minimized .nav-link {
   justify-content: center;
   padding-left: 0;
 }
 
-header.minimized a span {
+header.minimized .nav-link span {
   display: inline-block;
   opacity: 0;
   width: 0;
@@ -114,34 +125,45 @@ header.minimized #toggle-menu img {
     right: 0;
     z-index: 99;
   }
+
   #toggle-menu,
   #logo-1,
   #logo-2 {
     display: none;
   }
+
   header nav {
     width: 100%;
   }
+
   header ul {
     display: flex;
     width: 100%;
     justify-content: space-between;
   }
-  header a {
+
+  .nav-link {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 5px;
     height: auto;
     margin: 0;
-    max-width: auto;
     border-radius: 16px 16px 0 0;
-    padding-left: 0;
     padding: 5px 10px;
+    justify-content: center;
   }
-  header a:hover {
+
+  .nav-link:hover {
     border-left: none;
     border-bottom: 5px solid var(--green);
+    background-color: transparent;
+  }
+
+  .nav-link.active {
+    border-left: none;
+    border-bottom: 5px solid var(--green);
+    background-color: transparent;
   }
 }
 
@@ -149,11 +171,15 @@ header.minimized #toggle-menu img {
   header {
     padding: 1rem;
   }
-  header a span {
+
+  .nav-link span {
     display: none;
   }
-  header a:hover {
+
+  .nav-link:hover,
+  .nav-link.active {
     border-bottom: none;
     background-color: transparent;
+    filter: brightness(0) invert(1);
   }
 }

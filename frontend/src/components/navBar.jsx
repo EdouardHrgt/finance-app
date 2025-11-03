@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [isMinimized, setIsMinimized] = useState(false);
@@ -12,9 +13,8 @@ function NavBar() {
       }
     };
 
-    handleResize(); // vérifie dès le montage
+    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -43,12 +43,21 @@ function NavBar() {
 
       <nav>
         <ul>
-          {navBarPages.map(([icon, label]) => (
-            <li key={icon}>
-              <a href="#" className="tp3">
-                <img src={`./assets/icon-nav-${icon}.svg`} alt={label} />
+          {navBarPages.map(([path, label]) => (
+            <li key={path}>
+              <NavLink
+                to={path === "overview" ? "/" : `/${path}`}
+                className={({ isActive }) =>
+                  `tp3 nav-link ${isActive ? "active" : ""}`
+                }
+              >
+                <img
+                  src={`./assets/icon-nav-${path}.svg`}
+                  alt={label}
+                  className="nav-icon"
+                />
                 <span>{label}</span>
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

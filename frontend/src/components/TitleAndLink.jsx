@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function TitleAndLink({ title, link }) {
   return (
     <section className="title-link-wrapper">
       <h2 className="tp2">{title}</h2>
-      <a href={link}>
+      <Link to={link} className="see-details-link">
         See Details
         <svg
           fill="none"
@@ -16,7 +18,7 @@ function TitleAndLink({ title, link }) {
             fill="#696868"
           />
         </svg>
-      </a>
+      </Link>
     </section>
   );
 }

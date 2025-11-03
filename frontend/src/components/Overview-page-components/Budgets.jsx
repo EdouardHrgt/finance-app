@@ -1,5 +1,5 @@
-import useFetch from "../hooks/useFetch";
-import TitleAndLink from "./TitleAndLink";
+import useFetch from "../../hooks/useFetch";
+import TitleAndLink from "../../components/TitleAndLink";
 
 function Budgets() {
   const {

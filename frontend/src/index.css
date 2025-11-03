@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("./styles/navbar.module.css");
-@import url("./styles/balance.module.css");
-@import url("./styles/pots.module.css");
-@import url("./styles/transactions.module.css");
-@import url("./styles/recurring-bills.module.css");
-@import url("./styles/budgets.module.css");
+@import url("./styles/overview-page-style/balance.module.css");
+@import url("./styles/overview-page-style/pots.module.css");
+@import url("./styles/overview-page-style/transactions.module.css");
+@import url("./styles/overview-page-style/recurring-bills.module.css");
+@import url("./styles/overview-page-style/budgets.module.css");
 
 :root {
   /* Neutral*/
@@ -217,6 +217,14 @@ button {
   grid-template-rows: 1fr;
   gap: 0;
   max-width: 1140px;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.page h1 {
+  padding-top: 31px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
