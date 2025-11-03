@@ -5,6 +5,7 @@
 @import url("./styles/overview-page-style/transactions.module.css");
 @import url("./styles/overview-page-style/recurring-bills.module.css");
 @import url("./styles/overview-page-style/budgets.module.css");
+@import url("./styles/transactions-page-style/transactions-page.module.css");
 
 :root {
   /* Neutral*/
@@ -191,7 +192,8 @@ button {
 /* ===== REGROUPED COMPONENTS CONTAINERS ===== */
 .transactions-and-pots-container,
 .budget-bills-container,
-.budgets-wrapper {
+.budgets-wrapper,
+.transactions-page-container {
   background-color: var(--white);
   border-radius: 12px;
   padding: 1.5rem;

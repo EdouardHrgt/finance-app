@@ -1,5 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import TitleAndLink from "../../components/TitleAndLink";
+import { formatDate, formatAmount } from "../../utils/formatDateAndAmount";
 
 const DEFAULT_AVATAR = "/assets/avatars/no-pp.png";
 
@@ -18,28 +19,6 @@ function Transactions() {
       amount: 0,
       date: "",
     }));
-
-  const formatDate = (dateString) => {
-    if (!dateString) return "";
-    const d = new Date(dateString);
-    return d.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-  };
-
-  const formatAmount = (value) => {
-    if (value == null) return "N/A";
-
-    const str = String(value).trim();
-    const isNegative = str.startsWith("-");
-    const num = Math.abs(Number.parseFloat(str));
-    if (!Number.isFinite(num)) return "N/A";
-
-    const formatted = num.toFixed(2);
-    return (isNegative ? "-" : "+") + "$" + formatted;
-  };
 
   return (
     <div className="transactions-and-pots-container transactions-wrapper">

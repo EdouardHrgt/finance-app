@@ -154,16 +154,12 @@ header.minimized #toggle-menu img {
     justify-content: center;
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link.active
+   {
     border-left: none;
     border-bottom: 5px solid var(--green);
-    background-color: transparent;
-  }
-
-  .nav-link.active {
-    border-left: none;
-    border-bottom: 5px solid var(--green);
-    background-color: transparent;
+    background-color: var(--white);
   }
 }
 

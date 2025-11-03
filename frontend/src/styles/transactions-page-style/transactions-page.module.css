@@ -1,0 +1,105 @@
+.transactions-page-container {
+  max-width: 1100px;
+  margin: 32px 0 81px;
+}
+
+.transactions-page-transaction-name-img img {
+  width: var(--portrait);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.transactions-page-transaction-name-img strong {
+  color: var(--grey-900);
+  margin-left: 1rem;
+}
+
+.transaction-amount-date strong {
+  color: var(--green);
+}
+
+.transactions-page-transaction-category-date p,
+.transactions-page-transactions-labels p {
+  color: var(--grey-500);
+}
+
+.transactions-page-transactions-labels,
+.transactions-page-transactions-labels > div,
+.transactions-page-transaction,
+.transactions-page-transaction-name-img,
+.transactions-page-transaction-category-date,
+.pagination-pages-choice,
+.transactions-page-pagination {
+  display: flex;
+  align-items: center;
+}
+
+.transactions-page-transaction,
+.transactions-page-transactions-labels,
+.transactions-page-pagination {
+  justify-content: space-between;
+}
+
+.transactions-page-transactions-labels {
+  margin: 24px 0;
+}
+
+.transactions-page-transaction {
+  border-top: 1px solid var(--grey-100);
+  padding: 1rem 0;
+}
+
+.transactions-page-transaction-name-img,
+.transactions-page-transactions-labels-first {
+  max-width: 428px;
+  width: 100%;
+}
+
+.transactions-page-transactions-labels > div,
+.transactions-page-transaction-category-date {
+  gap: 2rem;
+}
+
+.transactions-page-transaction-category,
+.transactions-page-transactions-labels-category {
+  width: 80px;
+}
+
+.transactions-page-transactions-labels-date,
+.transactions-page-transaction-date {
+  width: 97px;
+}
+
+.pagination-pages-choice {
+  gap: 10px;
+}
+
+.transactions-page-transaction-amount strong,
+.transactions-page h1,
+.transactions-page-transaction-name-img strong {
+  color: var(--grey-900);
+}
+
+.transactions-page-pagination {
+    padding-top: 1rem;
+}
+
+.transactions-page-pagination button {
+    background-color: transparent;
+    border: 1px solid var(--grey-100);
+    border-radius: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.transactions-page-pagination button.active,
+.transactions-page-pagination button:hover {
+  background-color: var(--grey-900);
+  color: var(--white);
+}
+
