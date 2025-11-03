@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
 @import url("./styles/navbar.module.css");
 @import url("./styles/balance.module.css");
 @import url("./styles/pots.module.css");
@@ -138,7 +137,7 @@ button {
 #app-main {
   background-color: var(--beige-100);
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(90px, 300px) 1fr;
   grid-template-rows: 1fr;
   gap: 40px;
   padding-right: 40px;
@@ -167,7 +166,7 @@ button {
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ===== Label + "See details" link bar in components ===== */
@@ -227,7 +226,7 @@ button {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1310px) {
   #app-main {
     gap: 1rem;
     padding-right: 1rem;
