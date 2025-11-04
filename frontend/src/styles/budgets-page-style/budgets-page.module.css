@@ -1,0 +1,105 @@
+.budgets-page-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr;
+  grid-column-gap: 1rem;
+  margin: 32px 0 81px;
+  background-color: var(--beige-100);
+  max-width: 1100px;
+}
+
+.budgets-page-container h2 {
+  margin: 1rem 0;
+}
+
+/*===== LEFT COLUMN: DONUT =====*/
+.budgets-page-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 3rem 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+}
+
+.budgets-page-left .donut {
+  margin-inline: auto;
+  margin-bottom: 32px;
+}
+
+.budget-page-donut-metrics div:first-child {
+  border-top: 0;
+}
+
+.budget-page-donut-metric,
+.budget-page-donut-metric-amount,
+.budgets-page-card-title {
+  display: flex;
+  align-items: center;
+}
+
+.budget-page-donut-metric {
+  border-top: 1px solid var(--grey-100);
+  padding: 1rem 0;
+}
+
+.budget-page-donut-metric-bar {
+  width: 4px;
+  height: 21px;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.budget-page-donut-metric-amount {
+  margin-left: auto;
+  gap: 12px;
+}
+
+/*===== RIGHT COLUMN: BUDGETS CARDS =====*/
+.budgets-page-right {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+}
+
+.budgets-page-card-title img {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.budgets-page-card-circle {
+  width: 16px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background-color: var(--red);
+  margin-right: 1rem;
+}
+
+.budgets-page-card-gauge-container {
+  background-color: var(--beige-100);
+  border-radius: 4px;
+  height: 32px;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 4px;
+}
+
+.budgets-page-card-gauge {
+  height: calc(32px - 8px);
+  border-radius: inherit;
+  background-color: var(--red);
+  max-width: 67%;
+  animation: gauge 1.5s ease-in forwards;
+}
+
+@keyframes gauge {
+  from  {
+    width: 0;
+  }
+  to {
+    width: 100%
+  }
+}
+
