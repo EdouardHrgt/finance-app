@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { loadFromStore } from "../utils/storage";
 import { useLocation } from "react-router-dom";
 import { formatDate, formatAmount } from "../utils/formatDateAndAmount";
@@ -26,6 +26,57 @@ function TransactionsPage() {
     <main className="transactions-page page">
       <h1 className="tp1">Transactions</h1>
       <div className="transactions-page-container">
+        <div className="transactions-page-form">
+          <input
+            type="text"
+            name="transaction"
+            id="transaction"
+            placeholder="Search transaction"
+          />
+          <div className="transactions-page-form-dropdowns-wrapper">
+            <div className="transaction-page-form-menu mg-right">
+              <p className="tp4-regular p-light">Sort by</p>
+              <div className="dropdown">
+                <div className="dropdown-txt">
+                  <p className="tp4-bold p-dark">Latest </p>
+                  <img
+                    src="../../public/assets/icon-caret-down.svg"
+                    alt="open the menu"
+                  />
+                </div>
+                <div className="dropdown-content">
+                  <p className="tp4-regular">Latest</p>
+                  <p className="tp4-regular">Oldest</p>
+                  <p className="tp4-regular">A to Z</p>
+                  <p className="tp4-regular">Z to A</p>
+                  <p className="tp4-regular">Highest</p>
+                  <p className="tp4-regular">Lowest</p>
+                </div>
+              </div>
+            </div>
+            <div className="transaction-page-form-menu">
+              <p className="tp4-regular p-light">Category</p>
+              <div className="dropdown">
+                <div className="dropdown-txt">
+                  <p className="tp4-bold p-dark">All Transactions</p>
+                  <img
+                    src="../../public/assets/icon-caret-down.svg"
+                    alt="open the menu"
+                  />
+                </div>
+                <div className="dropdown-content">
+                  <p className="tp4-regular">All Transactions</p>
+                  <p className="tp4-regular">Entertainment</p>
+                  <p className="tp4-regular">Bills</p>
+                  <p className="tp4-regular">Groceries</p>
+                  <p className="tp4-regular">Dining Out</p>
+                  <p className="tp4-regular">Transportation</p>
+                  <p className="tp4-regular">Personnal Care</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="transactions-page-transactions-labels">
           <p className="tp5-regular transactions-page-transactions-labels-first">
             Recipient / Sender

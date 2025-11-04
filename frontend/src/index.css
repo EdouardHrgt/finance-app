@@ -134,6 +134,14 @@ button {
   font-weight: 400;
 }
 
+.p-light {
+  color: var(--grey-500);
+}
+
+.p-dark {
+  color: var(--grey-900);
+}
+
 /* ===== THIS IS THE APP BODY ===== */
 #app-main {
   background-color: var(--beige-100);

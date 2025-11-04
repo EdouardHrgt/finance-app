@@ -3,6 +3,68 @@
   margin: 32px 0 81px;
 }
 
+/* ===== SEARCH BAR ELEMENTS ===== */
+.transactions-page-form {
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.transactions-page-form input {
+  padding: 12px 2.5rem 12px 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--grey-500);
+  min-width: 320px;
+  background-image: url(../../../public/assets/icon-search.svg);
+  background-repeat: no-repeat;
+  background-position: center right 15px;
+}
+
+.transaction-page-form-menu {
+  position: relative;
+  gap: 7px;
+}
+
+.mg-right {
+  margin-right: 2rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-txt {
+  border: 1px solid var(--grey-500);
+  border-radius: 8px;
+  padding: 12px 1.2rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  position: absolute;
+  z-index: 10;
+  background-color: rgb(254, 254, 254);
+  border: 1px solid var(--grey-100);
+  display: none;
+}
+
+.dropdown-content p {
+  border-top: 1px solid var(--grey-100);
+  padding: 0.7rem;
+  cursor: pointer;
+  color: var(--grey-500);
+}
+
+.dropdown-content p:first-child {
+  border-top: 0;
+}
+
+.dropdown-content p:hover {
+  color: var(--black);
+}
+
 .transactions-page-transaction-name-img img {
   width: var(--portrait);
   aspect-ratio: 1/1;
@@ -29,7 +91,12 @@
 .transactions-page-transaction-name-img,
 .transactions-page-transaction-category-date,
 .pagination-pages-choice,
-.transactions-page-pagination {
+.transactions-page-pagination,
+.transactions-page-form,
+.transaction-page-form-menus,
+.dropdown-txt,
+.transaction-page-form-menu,
+.transactions-page-form-dropdowns-wrapper {
   display: flex;
   align-items: center;
 }
@@ -81,20 +148,20 @@
 }
 
 .transactions-page-pagination {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 
 .transactions-page-pagination button {
-    background-color: transparent;
-    border: 1px solid var(--grey-100);
-    border-radius: 8px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-inline: 15px;
-    transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  border: 1px solid var(--grey-100);
+  border-radius: 8px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 .transactions-page-pagination button.active,
@@ -102,4 +169,3 @@
   background-color: var(--grey-900);
   color: var(--white);
 }
-
