@@ -286,6 +286,9 @@ button {
   .bills-container {
     margin-bottom: 12px;
   }
+  .page {
+    margin-inline: 1rem;
+  }
 }
 
 @media (max-width: 800px) {

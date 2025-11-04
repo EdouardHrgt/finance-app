@@ -48,6 +48,7 @@
   background-color: rgb(254, 254, 254);
   border: 1px solid var(--grey-100);
   display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content p {
@@ -65,7 +66,16 @@
   color: var(--black);
 }
 
-.transactions-page-transaction-name-img img {
+.dropdown-icon {
+  display: none;
+}
+
+.transactions-mobile {
+  display: none;
+}
+
+.transactions-page-transaction-name-img img,
+.transactions-left-mobile img {
   width: var(--portrait);
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -86,7 +96,7 @@
 }
 
 .transactions-page-transactions-labels,
-.transactions-page-transactions-labels > div,
+.transactions-page-transactions-labels>div,
 .transactions-page-transaction,
 .transactions-page-transaction-name-img,
 .transactions-page-transaction-category-date,
@@ -96,7 +106,9 @@
 .transaction-page-form-menus,
 .dropdown-txt,
 .transaction-page-form-menu,
-.transactions-page-form-dropdowns-wrapper {
+.transactions-page-form-dropdowns-wrapper,
+.transactions-left-mobile,
+.transactions-mobile-item {
   display: flex;
   align-items: center;
 }
@@ -122,7 +134,7 @@
   width: 100%;
 }
 
-.transactions-page-transactions-labels > div,
+.transactions-page-transactions-labels>div,
 .transactions-page-transaction-category-date {
   gap: 2rem;
 }
@@ -168,4 +180,110 @@
 .transactions-page-pagination button:hover {
   background-color: var(--grey-900);
   color: var(--white);
+}
+
+.transactions-page-pagination button.active p,
+.transactions-page-pagination button:hover p {
+  color: var(--white);
+}
+
+@media (max-width: 1155px) {
+  .transactions-page-container {
+    max-width: 100%;
+  }
+
+  .transactions-page-form input {
+    padding: 12px 2rem 12px 1rem;
+    min-width: unset;
+    background-position: center right 10px;
+  }
+
+  .mg-right {
+    margin-right: 0.5rem;
+  }
+
+  .transaction-page-form-menu {
+    gap: 3px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mg-right {
+    margin-right: 1rem;
+  }
+
+  .transaction-page-form-menu {
+    gap: 7px;
+  }
+
+  .transactions-page-container {
+    margin: 18px 0 100px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .dropdown-txt,
+  .dropdown-label {
+    display: none;
+  }
+
+  .dropdown-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .mg-right {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .dropdown-content {
+    right: -1rem;
+    min-width: 165px;
+    text-align: center;
+  }
+
+  .transactions-page-form input {
+    width: 100%;
+  }
+
+  .transactions-page-transactions-labels,
+  .transactions-page-transaction {
+    display: none;
+  }
+
+  .transactions-mobile {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .transactions-left-mobile {
+    gap: 1rem;
+  }
+
+  .transactions-mobile-item {
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid var(--grey-100);
+  }
+
+  .transactions-right-mobile {
+    text-align: end;
+  }
+
+  .transactions-page-pagination button {
+    gap: 0;
+    padding-inline: 12px;
+  }
+
+  .transactions-page-pagination button p {
+    display: none;
+  }
+  .page-btn-2 {
+    margin-left: 5px;
+  }
+  .page-btn-1 {
+    margin-right: 5px;
+  }
 }
