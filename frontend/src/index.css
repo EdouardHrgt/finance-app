@@ -7,6 +7,7 @@
 @import url("./styles/overview-page-style/budgets.module.css");
 @import url("./styles/transactions-page-style/transactions-page.module.css");
 @import url("./styles/budgets-page-style/budgets-page.module.css");
+@import url("./styles/pots-page-style/pots-page.module.css");
 
 :root {
   /* Neutral*/
@@ -143,6 +144,10 @@ button {
 
 .p-dark {
   color: var(--grey-900);
+}
+
+.p-dark-medium {
+  color: var(--grey-500);
 }
 
 /* ===== THIS IS THE APP BODY ===== */

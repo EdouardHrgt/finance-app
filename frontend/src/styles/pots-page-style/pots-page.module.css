@@ -1,0 +1,117 @@
+.pots-page-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  margin-top: 32px;
+  max-width: 1100px;
+}
+
+.pots-page-pot {
+  background-color: var(--white);
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.pots-page-pot-title,
+.pots-page-pot-metrix-percent,
+.pots-page-pot-metrix-amount,
+.pots-page-pot-metrix-btns,
+.pots-page-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.pots-page-circle {
+  width: 16px;
+  aspect-ratio: 1;
+  background-color: var(--red);
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+.pots-page-pot-title img {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.pots-page-pot-metrix {
+  margin-top: 32px;
+}
+
+.pots-page-pot-metrix-percent,
+.pots-page-pot-metrix-amount,
+.pots-page-pot-metrix-btns,
+.pots-page-title-wrapper {
+  justify-content: space-between;
+}
+
+.pots-page-pot-metrix-gauge-wrapper {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--beige-100);
+  margin: 1rem 0;
+}
+
+.pots-page-pot-metrix-gauge {
+  border-radius: inherit;
+  max-width: 33%;
+  background-color: var(--red);
+  width: 100%;
+  height: inherit;
+}
+
+.pots-page-pot-metrix-btns {
+  gap: 10px;
+}
+
+.pots-page-pot-metrix-btns button {
+  border-radius: 16px;
+  max-width: 227px;
+  width: 100%;
+  height: 53px;
+  background-color: var(--beige-100);
+  margin-top: 32px;
+}
+
+.pots-page-title-wrapper {
+  margin-top: 22px;
+  max-width: 1100px;
+}
+
+#pots-title{
+  padding-top: 0;
+}
+
+.pots-page-title-wrapper button {
+  background-color: var(--grey-900);
+  border-radius: 8px;
+  transition: .2s ease-in;
+}
+
+.pots-page-title-wrapper button:hover {
+    background-color: var(--grey-500);
+}
+
+.pots-page-title-wrapper button p {
+  color: var(--white);
+  padding: 1rem 1.05rem;
+}
+
+@media (max-width: 1024px) {
+  .pots-page-grid {
+    display: block;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    max-width: 100%;
+    margin-bottom: 81px;
+  }
+  .pots-page-pot {
+    margin: 1.5rem 0;
+  }
+  .pots-page-title-wrapper button p {
+  padding: 1rem 2.5rem;
+}
+}
