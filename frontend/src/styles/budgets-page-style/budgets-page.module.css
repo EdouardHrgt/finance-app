@@ -67,10 +67,11 @@
 }
 
 /*===== RIGHT COLUMN: BUDGETS CARDS =====*/
-.budgets-page-right {
-  padding: 1.5rem;
+.budgets-page-card {
   background-color: var(--white);
+  padding: 1.5rem;
   border-radius: 12px;
+  margin-bottom: 1.5rem;
 }
 
 .budgets-page-card-title img {
@@ -82,7 +83,6 @@
   width: 16px;
   aspect-ratio: 1;
   border-radius: 999px;
-  background-color: var(--red);
   margin-right: 1rem;
 }
 
@@ -98,7 +98,6 @@
 .budgets-page-card-gauge {
   height: calc(32px - 8px);
   border-radius: inherit;
-  background-color: var(--red);
   animation: gauge 2s ease-in forwards;
 }
 
@@ -152,6 +151,14 @@
     max-height: auto;
     flex-direction: row;
     gap: 1rem;
+    align-items: center;
+  }
+  .budget-page-donut-metrics {
+    max-width: 350px;
+    width: 100%;
+  }
+  .budgets-page-right {
+    margin-top: 1rem;
   }
 }
 

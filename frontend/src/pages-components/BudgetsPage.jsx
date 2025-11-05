@@ -8,15 +8,13 @@ function BudgetsPage() {
   const budgetsList = loadFromStore(`/api${location.pathname}`) || [];
   const transactions = loadFromStore("/api/transactions") || [];
 
-  // Total budget
   const totalBudget = budgetsList.reduce((acc, b) => acc + (b.maximum || 0), 0);
 
-  // Total dépensé (t.amount < 0)
   const totalSpent = transactions
     .filter((t) => t.amount < 0)
     .reduce((acc, t) => acc + Math.abs(t.amount), 0);
 
-  // Donut gradient (basé sur la répartition de chaque budget)
+
   let start = 0;
   const segments = budgetsList.map((b) => {
     const percent = (b.maximum / totalBudget) * 100;
@@ -27,7 +25,6 @@ function BudgetsPage() {
   });
   const gradient = `conic-gradient(${segments.join(", ")})`;
 
-  // Calcul dépenses par catégorie
   const getSpentByCategory = (cat) =>
     transactions
       .filter((t) => t.category === cat && t.amount < 0)
@@ -53,9 +50,10 @@ function BudgetsPage() {
             </div>
           </div>
 
-          <h2 className="tp2 p-dark">Spending Summary</h2>
+          
 
           <div className="budget-page-donut-metrics">
+            <h2 className="tp2 p-dark">Spending Summary</h2>
             {budgetsList.map((b, i) => {
               const spent = getSpentByCategory(b.category);
               return (
