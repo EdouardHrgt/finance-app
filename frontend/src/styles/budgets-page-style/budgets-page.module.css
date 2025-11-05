@@ -15,12 +15,13 @@
 /*===== LEFT COLUMN: DONUT =====*/
 .budgets-page-left {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   max-width: 500px;
   padding: 3rem 1.5rem;
   background-color: var(--white);
   border-radius: 12px;
+  max-height: 640px;
 }
 
 .budgets-page-left .donut {
@@ -34,7 +35,10 @@
 
 .budget-page-donut-metric,
 .budget-page-donut-metric-amount,
-.budgets-page-card-title {
+.budgets-page-card-title,
+.budgets-page-card-latest-el,
+.budgets-page-card-metrics,
+.budgets-page-card-metric {
   display: flex;
   align-items: center;
 }
@@ -44,12 +48,17 @@
   padding: 1rem 0;
 }
 
-.budget-page-donut-metric-bar {
+.budget-page-donut-metric-bar,
+.budgets-page-metric-bar {
   width: 4px;
   height: 21px;
-  background-color: cornflowerblue;
   border-radius: 8px;
   margin-right: 1rem;
+}
+
+.budgets-page-metric-bar {
+  background-color: var(--beige-100);
+  height: 40px;
 }
 
 .budget-page-donut-metric-amount {
@@ -90,16 +99,65 @@
   height: calc(32px - 8px);
   border-radius: inherit;
   background-color: var(--red);
-  max-width: 67%;
-  animation: gauge 1.5s ease-in forwards;
+  animation: gauge 2s ease-in forwards;
 }
 
 @keyframes gauge {
-  from  {
+  from {
     width: 0;
   }
   to {
-    width: 100%
+    width: 100%;
   }
 }
 
+.budgets-page-card-metrics {
+  gap: 20%;
+  margin: 1.5rem 0;
+}
+
+.budgets-page-card-latest {
+  background-color: var(--beige-100);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.budgets-page-card-latest-el {
+  padding: 1rem 0;
+}
+
+.budgets-page-card-latest-el {
+  border-top: 1px solid var(--grey-100);
+}
+
+.budgets-page-card-latest-el img {
+  width: var(--portrait);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+.budgets-page-card-latest-el-date-amount {
+  margin-left: auto;
+  text-align: end;
+}
+
+@media (max-width: 1024px) {
+  .budgets-page-container {
+    display: block;
+    max-width: 100%;
+  }
+  .budgets-page-left {
+    max-width: 100%;
+    max-height: auto;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .budgets-page-left {
+    flex-direction: column;
+    gap: 0;
+  }
+}

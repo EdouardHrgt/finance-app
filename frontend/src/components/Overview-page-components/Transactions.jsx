@@ -1,11 +1,16 @@
 import useFetch from "../../hooks/useFetch";
 import TitleAndLink from "../../components/TitleAndLink";
 import { formatDate, formatAmount } from "../../utils/formatDateAndAmount";
+import { normalizeStructure } from "../../utils/storage";
 
-const DEFAULT_AVATAR = "/assets/avatars/no-pp.png";
+const DEFAULT_AVATAR = "/assets/images/avatars/no-pp.png";
 
 function Transactions() {
-  const { data: transactions, loading, error } = useFetch("/api/transactions");
+  const { data: rawTransactions, loading, error } = useFetch("/api/transactions");
+
+  // Normalisation AVANT utilisation
+  const transactions = normalizeStructure(rawTransactions);
+
   const transactionsList =
     transactions?.slice(0, 5).map((trans) => ({
       label: trans.name,

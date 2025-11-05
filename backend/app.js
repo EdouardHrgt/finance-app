@@ -71,13 +71,12 @@ const createGetRoute = (pathUrl, fetchFunction, itemName) => {
       if (pathUrl === "/api/transactions") {
         data = data.map((tx) => ({
           ...tx,
-          avatar: `${BASE_URL}/images/${path.basename(tx.avatar)}`, // 🔗 lien complet vers les images
+          avatar: `${BASE_URL}/images/${path.basename(tx.avatar)}`,
         }));
       }
 
       // FRONT END "FAKE" DELAY.. Can delete this row in production
-      await new Promise((resolve) => setTimeout(resolve, 900));
-
+      await new Promise((resolve) => setTimeout(resolve, 1900));
       res.status(200).json(data);
     } catch (err) {
       next(err);
