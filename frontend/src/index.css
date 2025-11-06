@@ -8,6 +8,8 @@
 @import url("./styles/transactions-page-style/transactions-page.module.css");
 @import url("./styles/budgets-page-style/budgets-page.module.css");
 @import url("./styles/pots-page-style/pots-page.module.css");
+@import url("./styles/bills-page-style/bils-page.module.css");
+
 
 :root {
   /* Neutral*/

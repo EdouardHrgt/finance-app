@@ -1,0 +1,167 @@
+.bills-page-grid {
+  background-color: var(--beige-100);
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
+}
+
+/* LEFT COL */
+.bills-page-total {
+  border-radius: 12px;
+  background-color: var(--grey-900);
+  color: var(--white);
+  padding: 1.5rem;
+}
+
+.bills-page-total img {
+  margin-bottom: 32px;
+}
+
+.bills-page-total p strong {
+  display: block;
+  margin-top: 1rem;
+}
+
+.bills-page-summary {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.bills-page-summary-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--grey-100);
+}
+
+.bills-page-summary div:last-child {
+  padding: 0;
+  padding-top: 1rem;
+  border-bottom: 0;
+}
+
+.bills-page-summary div:last-child p,
+.bills-page-summary div:last-child strong {
+  color: var(--red);
+}
+
+/* RIGHT COL */
+.bills-page-right-col {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.bills-page-table {
+  width: 100%;
+}
+
+.bills-page-table-labels {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Bills-page-table-label-first,
+.Bills-page-table-card-name-img {
+  max-width: 320px;
+  width: 100%;
+}
+
+.Bills-page-table-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 1px solid var(--grey-100);
+}
+
+.Bills-page-table-card img {
+  width: 32px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.Bills-page-table-card-name-img {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Bills-page-table-card-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Bills-page-table-card-date p {
+  color: var(--green);
+}
+
+@media (max-width: 1300px) {
+  .bills-page-grid {
+    grid-column-gap: 1rem;
+  }
+  .bills-page-summary {
+    margin-top: 1rem;
+  }
+  .Bills-page-table-label-first,
+  .Bills-page-table-card-name-img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 1131px) {
+  .Bills-page-table-label-first,
+  .Bills-page-table-card-name-img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 1065px) {
+  .bills-page-grid {
+    max-width: 100%;
+    display: block;
+    grid-column-gap: 0;
+  }
+  .Bills-page-table-label-first,
+  .Bills-page-table-card-name-img {
+    max-width: 320px;
+  }
+  .bills-page-right-col {
+    margin-top: 1rem;
+  }
+  .bills-page-right-col{
+    padding-bottom: 81px;
+  }
+}
+
+@media (max-width: 800px) {
+.bills-page-table-labels {
+  display: none;
+}
+.Bills-page-table-card {
+  display: block;
+  position: relative;
+}
+.Bills-page-table-card-amount {
+  position: absolute;
+  z-index: 20;
+  top: 56px;
+  right: 0;
+}
+.Bills-page-table-card-date {
+  margin-top: 12px;
+}
+.bills-page-table .Bills-page-table-card:nth-child(2) {
+  border-top: 0;
+}
+}
