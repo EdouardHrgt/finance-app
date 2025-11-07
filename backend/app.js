@@ -76,7 +76,7 @@ const createGetRoute = (pathUrl, fetchFunction, itemName) => {
       }
 
       // FRONT END "FAKE" DELAY.. Can delete this row in production
-      await new Promise((resolve) => setTimeout(resolve, 750));
+      await new Promise((resolve) => setTimeout(resolve, 100));
       res.status(200).json(data);
     } catch (err) {
       next(err);

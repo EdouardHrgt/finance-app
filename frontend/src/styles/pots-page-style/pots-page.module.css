@@ -15,6 +15,13 @@
   width: 100%;
 }
 
+.pots-page-title-wrapper button {
+  background-color: var(--grey-900);
+  border-radius: 8px;
+  transition: 0.2s ease-in;
+  position: relative;
+}
+
 .pots-page-pot-title,
 .pots-page-pot-metrix-percent,
 .pots-page-pot-metrix-amount,
@@ -74,6 +81,42 @@
   height: 53px;
   background-color: var(--beige-100);
   margin-top: 32px;
+  position: relative;
+}
+
+.pots-page-pot-metrix-btns button:hover .btn-hover,
+.pots-page-title-wrapper button:hover .btn-hover-title {
+  display: flex;
+}
+
+.btn-hover-title {
+  background-color: var(--grey-300);
+  color: var(--white);
+  border-radius: inherit;
+  height: inherit;
+  width: max-content;
+  position: absolute;
+  z-index: 5;
+  top: calc(100% - 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.btn-hover {
+  background-color: var(--grey-500);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  border-radius: inherit;
+  color: var(--white);
+  display: none;
+  z-index: 5;
 }
 
 .pots-page-title-wrapper {
@@ -81,18 +124,8 @@
   max-width: 1100px;
 }
 
-#pots-title{
+#pots-title {
   padding-top: 0;
-}
-
-.pots-page-title-wrapper button {
-  background-color: var(--grey-900);
-  border-radius: 8px;
-  transition: .2s ease-in;
-}
-
-.pots-page-title-wrapper button:hover {
-    background-color: var(--grey-500);
 }
 
 .pots-page-title-wrapper button p {
@@ -108,10 +141,12 @@
     max-width: 100%;
     margin-bottom: 81px;
   }
+
   .pots-page-pot {
     margin: 1.5rem 0;
   }
+
   .pots-page-title-wrapper button p {
-  padding: 1rem 2.5rem;
-}
+    padding: 1rem 2.5rem;
+  }
 }
