@@ -54,6 +54,11 @@
   --mx-width: 1060px;
   --portrait: 40px;
   ---card-width: 100%;
+  --nav-width: 300px;
+}
+
+#app-main.nav-collapsed {
+  --nav-width: 56px;
 }
 
 * {
@@ -152,15 +157,25 @@ button {
   color: var(--grey-500);
 }
 
+.mid-gray {
+  color: purple;
+}
+
 /* ===== THIS IS THE APP BODY ===== */
 #app-main {
+  --nav-width: 260px;
   background-color: var(--beige-100);
   display: grid;
-  grid-template-columns: minmax(90px, 300px) 1fr;
+  grid-template-columns: var(--nav-width) 1fr;
   grid-template-rows: 1fr;
   gap: 40px;
   padding-right: 40px;
   position: relative;
+  transition: grid-template-columns 0.3s ease;
+}
+
+#app-main.nav-minimized {
+  --nav-width: 90px;
 }
 
 /* ===== LOADER + ANIMATION + Error message ===== */

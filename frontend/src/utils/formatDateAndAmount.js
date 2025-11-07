@@ -8,7 +8,25 @@ export const formatDate = (dateString) => {
   });
 };
 
-export const formatAmount = (value, style) => {
+export const formatMonthlyDate = (dateString) => {
+  if (!dateString) return "";
+
+  const d = new Date(dateString);
+  const day = d.getDate();
+
+  const suffix =
+    day % 10 === 1 && day !== 11
+      ? "st"
+      : day % 10 === 2 && day !== 12
+      ? "nd"
+      : day % 10 === 3 && day !== 13
+      ? "rd"
+      : "th";
+
+  return `Monthly-${day}${suffix}`;
+};
+
+export const formatAmount = (value, raw = false) => {
   if (value == null) return "N/A";
 
   const str = String(value).trim();
@@ -17,5 +35,12 @@ export const formatAmount = (value, style) => {
   if (!Number.isFinite(num)) return "N/A";
 
   const formatted = num.toFixed(2);
+  if (raw) return "$" + formatted;
   return (isNegative ? "-" : "+") + "$" + formatted;
 };
+
+
+export function getDayFromISODate(isoDate) {
+  const date = new Date(isoDate);
+  return date.getUTCDate();
+}

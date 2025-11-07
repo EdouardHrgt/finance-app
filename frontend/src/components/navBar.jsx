@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
-  const [isMinimized, setIsMinimized] = useState(false);
-
+function NavBar({ isMinimized, setIsMinimized }) {
   const toggleMenu = () => setIsMinimized((prev) => !prev);
 
   useEffect(() => {
@@ -16,7 +14,7 @@ function NavBar() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setIsMinimized]);
 
   const navBarPages = [
     ["overview", "Overview"],

@@ -1,13 +1,14 @@
 /* === HEADER - NAVBAR ===*/
-header {
+.header-main {
+  width: var(--nav-width);
+  transition: width 0.3s ease;
   background-color: var(--grey-900);
-  padding: 40px 0 24px 0;
+  padding: 40px 12px 24px 0;
   border-radius: 0 24px 24px 0;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
 }
+
 
 header .nav-link,
 header p {
@@ -113,10 +114,11 @@ header.minimized #toggle-menu img {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1024px) {
-  header {
+  .header-main {
     padding: 10px 1rem;
     border-radius: 12px 12px 0 0;
     max-width: 100%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     position: fixed;
